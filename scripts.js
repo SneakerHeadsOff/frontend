@@ -93,7 +93,7 @@ if (typeof window.ethereum === "undefined") {
             params: [
               {
                 from: accounts[0],
-                to: "0x354c1B020628bDeE428b5657F28bF6D7151eF16D",
+                to: "0x9265Da065d82fD2A5Ba972b0647099daB70Dd55a",
                 value: "0x" + eth,
               },
             ],

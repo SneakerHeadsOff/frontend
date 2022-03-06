@@ -116,3 +116,37 @@ if (typeof window.ethereum === "undefined") {
     mintbtn.disabled = false;
   }
 }
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "iOS") {
+      var wrapper = document.createElement("a");
+      wrapper.classList.add("mmLink");
+      wrapper.href = "https://metamask.app.link/dapp/" +
+          window.location.href.replace("https://", "").replace("http://", "") +
+          "?uid=mm";
+      mintbtn.parentNode.insertBefore(wrapper, mintbtn);
+      wrapper.appendChild(mintbtn);
+  }
+});
+
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  console.log(userAgent);
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const uid = urlParams.get("uid");
+  console.log(uid);
+  if (uid == "mm") {
+      return "Metamask";
+  }
+  if (/windows phone/i.test(userAgent)) {
+      return "Windows Phone";
+  }
+  if (/android/i.test(userAgent)) {
+      return "Android";
+  }
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return "iOS";
+  }
+  return "unknown";
+}

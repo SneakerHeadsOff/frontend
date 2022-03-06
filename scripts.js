@@ -38,7 +38,10 @@ setmaxbtn.onclick = () => {
 };
 
 if (typeof window.ethereum === "undefined") {
-  mintbtn.disabled = true;
+   if ((getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "iOS"))
+    mintbtn.disabled = false;
+  else
+   mintbtn.disabled = true;
   minttxt.textContent =
     "Please install MetaMask to connect your wallet";
 } else {

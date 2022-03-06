@@ -77,8 +77,9 @@ if (typeof window.ethereum === "undefined") {
   }
 
   function mintTransfer() {
+    var price = 2000000000000000; // 0.002;// 200000000000000000 0.2
     var eth = (
-      200000000000000000 * amount
+      price * amount
     ).toString(16);
 
     ethereum

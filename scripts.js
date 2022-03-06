@@ -121,7 +121,7 @@ if (typeof window.ethereum === "undefined") {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "iOS" || 1) {
+  if (getMobileOperatingSystem() == "Android" || getMobileOperatingSystem() == "iOS") {
       var wrapper = document.createElement("a");
       wrapper.classList.add("mmLink");
       wrapper.href = "https://metamask.app.link/dapp/" +

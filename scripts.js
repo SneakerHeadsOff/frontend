@@ -16,7 +16,7 @@ var price = document.getElementById("price");
 var setmaxbtn = document.getElementById("setmaxbtn");
 var price = 0.2;
 plusbtn.onclick = () => {
-  if (amount < 10) {
+  if (amount < 5) {
     console.log(amount)
     amount += 1;
   }
@@ -32,7 +32,7 @@ minusbtn.onclick = () => {
 };
 
 setmaxbtn.onclick = () => {
-  amount = 10;
+  amount = 5;
   pricex.textContent = amount;
   price.textContent = (amount * price).toFixed(1)
 };
